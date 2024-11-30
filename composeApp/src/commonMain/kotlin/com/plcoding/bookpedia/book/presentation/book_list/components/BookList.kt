@@ -39,7 +39,7 @@ fun BookList(
                     .padding(horizontal = 16.dp),
                 onClick = {
                     onBookClick(book)
-                }
+                },
             )
         }
     }

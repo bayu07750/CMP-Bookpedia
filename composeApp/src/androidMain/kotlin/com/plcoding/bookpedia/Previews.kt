@@ -46,13 +46,13 @@ private val books = (1..100).map {
     )
 }
 
-@Preview
-@Composable
-private fun BookListScreenPreview() {
-    BookListScreen(
-        state = BookListState(
-            searchResults = books
-        ),
-        onAction = {}
-    )
-}
+//@Preview
+//@Composable
+//private fun BookListScreenPreview() {
+//    BookListScreen(
+//        state = BookListState(
+//            searchResults = books
+//        ),
+//        onAction = {}
+//    )
+//}

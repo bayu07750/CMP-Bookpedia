@@ -1,5 +1,6 @@
 package com.plcoding.bookpedia.book.presentation.book_list
 
+import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -61,7 +62,7 @@ fun BookListScreenRoot(
                 else -> Unit
             }
             viewModel.onAction(action)
-        }
+        },
     )
 }
 
@@ -208,7 +209,7 @@ fun BookListScreen(
                                                     onAction(BookListAction.OnBookClick(it))
                                                 },
                                                 modifier = Modifier.fillMaxSize(),
-                                                scrollState = searchResultsListState
+                                                scrollState = searchResultsListState,
                                             )
                                         }
                                     }
@@ -228,7 +229,7 @@ fun BookListScreen(
                                             onAction(BookListAction.OnBookClick(it))
                                         },
                                         modifier = Modifier.fillMaxSize(),
-                                        scrollState = favoriteBooksListState
+                                        scrollState = favoriteBooksListState,
                                     )
                                 }
                             }

@@ -3,7 +3,6 @@
 package com.plcoding.bookpedia.book.presentation.book_detail
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -11,7 +10,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
@@ -47,7 +45,7 @@ import kotlin.math.round
 @Composable
 fun BookDetailScreenRoot(
     viewModel: BookDetailViewModel,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
@@ -59,14 +57,15 @@ fun BookDetailScreenRoot(
                 else -> Unit
             }
             viewModel.onAction(action)
-        }
+        },
     )
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun BookDetailScreen(
     state: BookDetailState,
-    onAction: (BookDetailAction) -> Unit
+    onAction: (BookDetailAction) -> Unit,
 ) {
     BlurredImageBackground(
         imageUrl = state.book?.imageUrl,
@@ -77,7 +76,7 @@ private fun BookDetailScreen(
         onBackClick = {
             onAction(BookDetailAction.OnBackClick)
         },
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
     ) {
         if(state.book != null) {
             Column(
