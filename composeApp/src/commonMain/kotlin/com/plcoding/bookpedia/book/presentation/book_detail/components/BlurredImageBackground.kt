@@ -1,7 +1,6 @@
 package com.plcoding.bookpedia.book.presentation.book_detail.components
 
 import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
