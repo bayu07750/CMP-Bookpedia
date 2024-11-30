@@ -77,9 +77,9 @@ fun BookListScreen(
     val searchResultsListState = rememberLazyListState()
     val favoriteBooksListState = rememberLazyListState()
 
-    LaunchedEffect(state.searchResults) {
-        searchResultsListState.animateScrollToItem(0)
-    }
+//    LaunchedEffect(state.searchResults) {
+//        searchResultsListState.animateScrollToItem(0)
+//    }
 
     LaunchedEffect(state.selectedTabIndex) {
         pagerState.animateScrollToPage(state.selectedTabIndex)
